@@ -50,7 +50,7 @@ class HomeControllerSpec extends PlaySpec with ScalaFutures with IntegrationPati
     }
 
     "accept a websocket flow if the origin is set correctly" in WsTestClient.withClient { client =>
-      lazy val port: Int = Helpers.testServerPort
+      lazy val port: Int = 19002
       val app = new GuiceApplicationBuilder().build()
       Helpers.running(TestServer(port, app)) {
         val myPublicAddress = s"localhost:$port"
